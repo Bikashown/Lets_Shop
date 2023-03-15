@@ -63,11 +63,12 @@ public static  CommonAction commonaction;
 			driver=new EdgeDriver();
 			driver.get(prop.getProperty("url"));
 			//driver.manage().window().maximize();
-			 lp=new LandingPage(driver);
-			  reusablemethods=new ReusableMethods(driver);
-			   commonaction=new CommonAction(driver);
+			
 			
 		}
+		 lp=new LandingPage(driver);
+		  reusablemethods=new ReusableMethods(driver);
+		   commonaction=new CommonAction(driver);
 		
 	
 	}
@@ -75,10 +76,10 @@ public static  CommonAction commonaction;
 	@AfterMethod(alwaysRun=true)
 	public static void CloseApp(ITestResult result)
 	{
-		if(ITestResult.FAILURE==result.getStatus())
-		{
-			commonaction.screenShot(driver, result.getMethod().getMethodName());
-		}
+		//if(ITestResult.FAILURE==result.getStatus())
+		//{
+			//commonaction.screenShot(driver, result.getMethod().getMethodName());
+		//}
 		driver.close();
 	}
 	

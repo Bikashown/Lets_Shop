@@ -35,8 +35,7 @@ public class CatalogPage extends Basic{
 	static By confirmationMessage=By.xpath("//*[text()='Product Added To Cart']");
 	public static List<WebElement> getproductlist()
 	{
-		//WaitforElementtoAppear(productlist);
-		//List<WebElement> x= CommonAction.findElements(product);
+	
 		return product;
 		
 		

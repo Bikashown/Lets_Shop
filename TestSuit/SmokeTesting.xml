@@ -6,6 +6,9 @@
 <include name="smoke"/>
 </run>
 </groups>
+<listeners>
+<listener class-name="Utility.Listeners"/>
+</listeners>
   <test thread-count="5" name="ErrorValidationTest">
   <classes>
   <class name="Regression.ErrorValidationTest"/>

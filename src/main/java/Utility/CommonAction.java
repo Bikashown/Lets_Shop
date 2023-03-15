@@ -781,9 +781,10 @@ public  class CommonAction extends Basic {
 			e.getMessage();
 		}
 		// This new path for jenkins
-		String newImageString =  System.getProperty("user.dir") + "\\ScreenShots\\" + filename + "_"
-				+ dateName + ".png";
-		return newImageString;
+	//	String newImageString =  System.getProperty("user.dir") + "\\ScreenShots\\" + filename + "_"
+				//+ dateName + ".png";
+		//return newImageString;
+		return destination;
 	}
 
 	public String getCurrentTime() {
