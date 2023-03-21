@@ -4,20 +4,15 @@
   <listeners>
     <listener class-name="Utility.Listeners"/>
   </listeners>
-  <test thread-count="5" name="VerifyItemNamesInCartTest(failed)">
-    <groups>
-      <run>
-        <include name="smoke"/>
-      </run>
-    </groups>
+  <test thread-count="5" name="ErrorValidationTest(failed)">
     <classes>
-      <class name="Regression.VerifyItemNamesInCartTest">
+      <class name="Regression.ErrorValidationTest">
         <methods>
           <include name="readconf"/>
           <include name="CloseApp"/>
-          <include name="VerifyItemWithCorrectName" invocation-numbers="0"/>
+          <include name="verifyerrorlog"/>
         </methods>
-      </class> <!-- Regression.VerifyItemNamesInCartTest -->
+      </class> <!-- Regression.ErrorValidationTest -->
     </classes>
-  </test> <!-- VerifyItemNamesInCartTest(failed) -->
+  </test> <!-- ErrorValidationTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -44,7 +44,7 @@ public class VerifyItemNamesInCartTest extends Basic{
 	CatalogPage.addProductToCart(inputdata.get("product"));
 	CatalogPage.clickOnKart();
 	Thread.sleep(3000);
-	Boolean match=CartPage.VerifyItemsInCart(inputdata.get("productq"));
+	Boolean match=CartPage.VerifyItemsInCart(inputdata.get("product"));
     Assert.assertTrue(match);
 	}
 	

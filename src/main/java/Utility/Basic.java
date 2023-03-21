@@ -8,6 +8,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -25,7 +26,7 @@ public class Basic {
    public static LandingPage lp;
 public static  ReusableMethods reusablemethods;
 public static  CommonAction commonaction;
-
+public static String browserName;
 	@BeforeTest(alwaysRun=true)
 	public static void readconf()
 	{
@@ -34,6 +35,7 @@ public static  CommonAction commonaction;
 			 prop=new Properties();
 			try {
 				prop.load(fis);
+				 browserName=System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -48,12 +50,18 @@ public static  CommonAction commonaction;
 	
 	public static void launchapp()
 	{
-		String browserName=prop.getProperty("browser");
-		
+		//String browserName=prop.getProperty("browser");
+		//String browserName=System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 		if(browserName.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
-			//driver.set(new ChromeDriver());
+			driver=new ChromeDriver();
+			driver.get(prop.getProperty("url"));
+		}
+		else if(browserName.equalsIgnoreCase("firefox"))
+		{
+			WebDriverManager.firefoxdriver().setup();
+			driver=new FirefoxDriver();
 			driver.get(prop.getProperty("url"));
 		}
 		else
