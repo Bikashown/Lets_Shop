@@ -50,10 +50,7 @@ public static String browserName;
 	
 	public static void launchapp() throws IOException
 	{
-		fis=new FileInputStream("C:\\Users\\DELL\\eclipse-workspace\\DemoProject\\conf.properties");
-		 prop=new Properties();
-		 prop.load(fis);
-		browserName=System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
+	
 		if(browserName.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
