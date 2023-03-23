@@ -1,17 +1,18 @@
 
 @tag
-Feature: Title of your feature
-  I want to use this template for my feature file
+Feature: Put an order.
 
- 
+ Background:
+ Given I landed on Lets Shop page
 
   @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
+  Scenario Outline: Positive test of submitting the order
+    Given Logged in with username <name> and password <password>
+    When I add the product <productname> to cart
+    And checkout <productname> and submit the order
+    Then "THANKYOU FOR THE ORDER." is displayed in the confirmationpage
 
     Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+      | name                   | password       | productname  |
+      | 78bikash.hyd@gmail.com | Hyderabad@2023 | zara coat 3  |
+     

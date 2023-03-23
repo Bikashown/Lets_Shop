@@ -48,10 +48,12 @@ public static String browserName;
 	
 	
 	
-	public static void launchapp()
+	public static void launchapp() throws IOException
 	{
-		//String browserName=prop.getProperty("browser");
-		//String browserName=System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
+		fis=new FileInputStream("C:\\Users\\DELL\\eclipse-workspace\\DemoProject\\conf.properties");
+		 prop=new Properties();
+		 prop.load(fis);
+		browserName=System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 		if(browserName.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
